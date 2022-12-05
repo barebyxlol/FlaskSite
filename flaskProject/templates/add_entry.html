@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block body %}
+
+
+{% if session.logged_in %}
+    <dt>Name : {{ name }}</dt>
+    <dt>Surname: {{ surname }}</dt>
+    <dt>Last Name: {{ last_name }}</dt>
+    <form action="{{ url_for('add_resume') }}" method=post class=add-resume>
+    <dl>
+        <div class="input">Title:    <input type=text name=title size = 20></div>
+        <div class="input">Employer:    <input type=text name=employer size = 20></div>
+        <div>Experience</div>
+        <dd><textarea name=experience rows=5 cols=40></textarea>
+        <dt>Skills
+        <dd><textarea name=skills rows=5 cols=40></textarea>
+        <dt>Relevant Information
+        <dd><textarea name=relevant_info rows=5 cols=40></textarea>
+        <dd><input type=submit value=Submit>
+    </dl>
+    </form>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block body %}
+
+
+{% if session.logged_in %}
+    <div class="pdf-resume">
+    <h2>{{ title }}</h2>
+    <div>{{ surname }} {{ name }} {{ last_name }}</div>
+    <div>Resume to {{ employer }}</div>
+    <div>Experience: {{ experience }}</div>
+    <div>Skills: {{ skills }}</div>
+    <div>Other: {{ relevant_info }}</div>
+    </div>
+    <form action="{{ url_for('show_post', post_id = post_id) }}" method=post class=download-resume>
+        <div class="pdf-resume">Download resume:   <input type=submit value=Download></div>
+    </form>
+{% endif %}
+
+
+{% endblock %}

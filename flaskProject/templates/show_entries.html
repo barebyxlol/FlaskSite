@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block body %}
+
+
+<ul class=entries>
+
+{% for entry in entries %}
+    <h2>{{ entry.title }}</h2>
+        <dt>{{ entry.employer }}
+            <dt>
+            <a href="{{ url_for('show_post', post_id=entry.id) }}">
+                Посмотреть резюме
+            </a>
+        </dt>
+
+
+{% else %}
+    <em>Unbelievable. No resumes here so far</em>
+{% endfor %}
+
+</ul>
+
+{% endblock %}

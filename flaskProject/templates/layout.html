@@ -1,0 +1,29 @@
+<!doctype html>
+<link rel="stylesheet" href='/static/style.css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<title>1001 Rezume</title>
+
+<div class=page>
+<h1>1001 Резюме</h1>
+
+<div class=metanav>
+
+{% if not session.logged_in %}
+    <div class="hrefs">
+    <a href="{{ url_for('login') }}">Log in</a>     <a href="{{ url_for('register') }}">Register</a>
+    </div>
+{% else %}
+    <div class="hrefs">
+        <a href="{{ url_for('logout') }}">Log out</a>       <a href="{{ url_for('show_entries') }}">My resumes</a>      <a href="{{ url_for('show_user_profile', username=username) }}">My profile</a>      <a href="{{ url_for('add_resume') }}">Add resume</a>
+    </div>
+{% endif %}
+</div>
+
+
+{% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+{% endfor %}
+
+{% block body %}{% endblock %}
+
+</div>

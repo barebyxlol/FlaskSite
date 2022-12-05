@@ -1,0 +1,10 @@
+html { text-align: center}
+body { font-family: sans-serif; background: lightblue; }
+h1, h2 { text-align: center}
+dl {white-space: pre}
+a { font-size: 20px; text-decoration: none}
+.page { margin: 2em auto; width: 40em; border: 5px solid #ccc; padding: 0.8em; background: white; }
+.hrefs { white-space: pre}
+.input {white-space: pre; }
+.user_profile {white-space: nowrap; text-align: left; padding: 0; margin: 2em 40%; line-height: 1.7em}
+.pdf-resume {text-align: center; white-space: pre; background: white; line-height: 1em}
